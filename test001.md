@@ -1,8 +1,0 @@
-# Test file
-> who is gogo
-
-		proc sql
-## last
-
----
-## test 002
