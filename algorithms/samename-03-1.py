@@ -17,3 +17,6 @@ print(find_same_name(name))
 
 name = ["이상면", "Tom", "Jerry", "Mike", "이상면", "Mike"]
 print(find_same_name(name))
+
+name = ["이상면", "Tom", "Jerry", "Mike", "Mike", "Jerry", "tom"]
+print(find_same_name(name))
