@@ -3,6 +3,9 @@ from math import exp, log, sqrt
 import re
 from datetime import date, time, datetime, timedelta
 from operator import itemgetter
+import sys
+import glob
+import os
 
 print("Output #1: I'm excited to learn Python.")
 
@@ -372,3 +375,106 @@ for key, value in another_dict.items():
 my_data=[[1,2,3],[4,5,6],[7,8,9]]
 rows_to_keep=[row for row in my_data if row[2]>5]
 print("Output #130 (list comprehension): {}".format(rows_to_keep))
+
+# 집합 축약을 이용하여 리스트의 고유한 튜플 집합을 고르기
+my_data=[(1,2,3), (4,5,6,), (7,8,9,), (7,8,9,)]
+set_of_tuples1={x for x in my_data}
+print("Output #131 (set comprehension): {}".format(set_of_tuples1))
+set_of_tuples2=set(my_data)
+print("Output #132 (set function): {}".format(set_of_tuples2))
+
+# 딕셔너리 축약을 이용하여 특정 키-값 쌍들을 고르기
+my_dictionary={'customer1':7,'customer2':9, 'customer3':11}
+my_results={key:value for key, value in my_dictionary.items() if value>10}
+print("Output #133 (dictionary comprehension): {}".format(my_results))
+
+print("Output #134:")
+x=0
+while x<11:
+    print("{!s}".format(x))
+    x+=1
+
+# 숫자 시퀀스의 평균 계산하기
+def getMean(numericValues):
+    return sum(numericValues)/len(numericValues) if len(numericValues)>0 \
+    else float('nan')
+
+my_list=[2,2,4,4,6,6,8,8,]
+print("Output #135 (mean): {!s}".format(getMean(my_list)))
+
+import numpy as np
+print("Ouptut #136 (mean): {!s}".format(np.mean(my_list)))
+
+# 숫자 시퀀스의 평균 계산하기
+def getMean(numericValues):
+    return sum(numericValues)/len(numericValues)
+
+my_list2=[]
+
+# 짧은 버전
+try:
+    print("Output #137: {}".format(getMean(my_list2)))
+except ZeroDivisionError as detail:
+    print("Output #137 (Error): {}".format(float('nan')))
+    print("Output #137 (Error): {}".format(detail))
+
+# 긴 버전
+try:
+    result=getMean(my_list2)
+except ZeroDivisionError as detail:
+    print("Output #138 (Error): {}".format(float('nan')))
+    print("Output #138 (Error): {}".format(detail))
+else:
+    print("Output #138 (The mean is): {}".format(result))
+finally:
+    print("Output #138 (Finally): The finally block is executed every time")
+
+## 텍스트 파일 읽기 (과거 방식) ##
+#print("Output #139: ")
+#input_file=sys.argv[1]
+#filereader=open(input_file, 'r')
+#for row in filereader:
+#    print(row.strip())
+#filereader.close()
+
+## 텍스트 파일 읽기 (새 방식) ##
+#input_file=sys.argv[1]
+#print("Output #140: ")
+#with open(input_file, 'r', newline='') as filereader:
+#    for row in filereader:
+#        print("{}".format(row.strip()))
+
+## 다수의 파일 읽기
+#print("Output $141:")
+#inputPath=sys.argv[1]
+#for input_file in glob.glob(os.path.join(inputPath, '*.txt')):
+#    with open(input_file, 'r', newline='') as filereader:
+#        for row in filereader:
+#            print("{}".format(row.strip()))
+
+# 파일 작성하기
+# 하나의 텍스트 파일 작성하기
+my_letters=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+max_index=len(my_letters)
+output_file=sys.argv[1]
+filewriter=open(output_file, 'w')
+for index_value in range(len(my_letters)):
+    if index_value < (max_index-1):
+        filewriter.write(my_letters[index_value]+'\t')
+    else:
+        filewriter.write(my_letters[index_value]+'\n')
+filewriter.close()
+print("Output $142: Output written to file")
+
+# CSV 파일 작성하기
+my_numbers=[0,1,2,3,4,5,6,7,8,9]
+max_index=len(my_numbers)
+output_file=sys.argv[1]
+filewriter=open(output_file, 'a')
+for index_value in range(len(my_numbers)):
+    if index_value < (max_index-1):
+        filewriter.write(str(my_numbers[index_value])+',')
+    else:
+        filewriter.write(str(my_numbers[index_value])+'\n')
+filewriter.close()
+print("Output $143: Output written to file")
