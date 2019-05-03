@@ -16,3 +16,5 @@ with open(input_file, 'r', newline='') as csv_in_file:
 			for index_value in my_columns:
 				row_list_output.append(row_list[index_value])
 			filewriter.writerow(row_list_output)
+
+# for 문이 작동하는 순서를 매우 정확하게 볼 수 있는 코드

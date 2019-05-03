@@ -22,3 +22,5 @@ with open(input_file, 'r', newline='') as csv_in_file:
 			for index_value in my_columns_index:
 				row_list_output.append(row_list[index_value])
 			filewriter.writerow(row_list_output)
+
+# my_columns에 있는 변수들의 index 값을 찾아서 my_colummns_index에 추가하고 이를 다시 찾아서 변수들을 더해나간다.
