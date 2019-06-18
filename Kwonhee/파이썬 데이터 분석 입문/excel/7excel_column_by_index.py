@@ -18,7 +18,7 @@ with open_workbook(input_file) as workbook:
 	for row_index in range(worksheet.nrows):
 		row_list = []
 		for column_index in my_columns:
-			cell_value = worksheet.cell_value(row_index,column_index)
+			cell_value = worksheet.cell_value(row_index, column_index)
 			cell_type = worksheet.cell_type(row_index, column_index)
 			if cell_type == 3:
 				date_cell = xldate_as_tuple(cell_value,workbook.datemode)

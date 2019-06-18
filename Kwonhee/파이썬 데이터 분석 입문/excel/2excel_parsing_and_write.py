@@ -3,8 +3,8 @@ import sys
 from xlrd import open_workbook
 from xlwt import Workbook
 
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+input_file = "D:/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/sales_2013.xlsx"
+output_file = "D:/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/2output.xls"
 
 output_workbook = Workbook()
 output_worksheet = output_workbook.add_sheet('jan_2013_output')

@@ -2,7 +2,7 @@
 import sys
 from xlrd import open_workbook
 
-input_file = sys.argv[1]
+input_file = "D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\excel\sales_2013.xlsx"
 
 workbook = open_workbook(input_file)
 print('Number of worksheets:', workbook.nsheets)

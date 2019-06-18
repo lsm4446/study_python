@@ -14,3 +14,5 @@ with open(input_file, 'r', newline='') as csv_in_file:
 			if row_counter >= 3 and row_counter <= 15:
 				filewriter.writerow([value.strip() for value in row])
 			row_counter += 1
+
+# python 11csv_reader_select_contiguous_rows.py supplier_data_unnecessary_header_footer.csv output_11.csv

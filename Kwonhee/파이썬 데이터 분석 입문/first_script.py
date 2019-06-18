@@ -466,6 +466,8 @@ for index_value in range(len(my_letters)):
 filewriter.close()
 print("Output $142: Output written to file")
 
+# python first_script.py test.txt
+
 # CSV 파일 작성하기
 my_numbers=[0,1,2,3,4,5,6,7,8,9]
 max_index=len(my_numbers)

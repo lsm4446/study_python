@@ -4,10 +4,10 @@ import glob
 import os
 import sys
 
-input_path = sys.argv[1]
-output_file = sys.argv[2]
+input_path = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel"
+output_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/pandas_output.xls"
 
-all_workbooks = glob.glob(os.path.join(input_path,'*.xls*'))
+all_workbooks = glob.glob(os.path.join(input_path,'*.xlsx'))
 data_frames = []
 for workbook in all_workbooks:
 	all_worksheets = pd.read_excel(workbook, sheetname=None, index_col=None)

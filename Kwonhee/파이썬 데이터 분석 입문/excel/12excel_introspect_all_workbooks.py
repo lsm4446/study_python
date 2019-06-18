@@ -4,7 +4,7 @@ import os
 import sys
 from xlrd import open_workbook
 
-input_directory = sys.argv[1]
+input_directory = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel"
 
 workbook_counter = 0
 for input_file in glob.glob(os.path.join(input_directory, '*.xls*')):

@@ -14,3 +14,5 @@ with open(input_file, 'r', newline='') as csv_in_file:
 		filewriter.writerow(header_list)
 		for row in filereader:
 			filewriter.writerow (row)
+
+# python 12csv_reader_add_header_row.py supplier_data_no_header_row.csv output_12.csv

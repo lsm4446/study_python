@@ -4,13 +4,12 @@ import MySQLdb
 import sys
 
 # Path to and name of a CSV input file
-input_file = sys.argv[1]
+input_file = "D:\Kwonhee\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\database\data_for_updating_mysql.csv"
 
 # Connect to a MySQL database
-con = MySQLdb.connect(host='localhost', port=3306, db='my_suppliers', \
-user='root', passwd='my_password')
+con = MySQLdb.connect(host='localhost', port=3306, db='my_suppliers', user='idencosmos', passwd='password')
 c = con.cursor()
-	
+
 # Read the CSV file and update the specific rows
 file_reader = csv.reader(open(input_file, 'r', newline=''), delimiter=',')
 header = next(file_reader, None)

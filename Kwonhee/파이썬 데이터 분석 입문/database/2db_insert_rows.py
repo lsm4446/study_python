@@ -4,19 +4,18 @@ import sqlite3
 import sys
 
 # Path to and name of a CSV input file
-input_file = sys.argv[1]
-
+input_file = "D:\Kwonhee\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\database\supplier_data.csv"
 # Create an in-memory SQLite3 database
 # Create a table called Suppliers with five attributes
 con = sqlite3.connect('Suppliers.db')
 c = con.cursor()
 create_table = """CREATE TABLE IF NOT EXISTS Suppliers
-				(Supplier_Name VARCHAR(20), 
+				(Supplier_Name VARCHAR(20),
 				Invoice_Number VARCHAR(20),
 				Part_Number VARCHAR(20),
 				Cost FLOAT,
 				Purchase_Date DATE);"""
-c.execute(create_table)
+con.execute(create_table)
 con.commit()
 
 # Read the CSV file
@@ -38,4 +37,4 @@ for row in rows:
 	output = []
 	for column_index in range(len(row)):
 		output.append(str(row[column_index]))
-	print(output)
+	print('output:', output)

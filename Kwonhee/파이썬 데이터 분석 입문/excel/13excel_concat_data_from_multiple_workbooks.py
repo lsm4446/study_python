@@ -6,16 +6,16 @@ from datetime import date
 from xlrd import open_workbook, xldate_as_tuple
 from xlwt import Workbook
 
-input_folder = sys.argv[1]
-output_file = sys.argv[2]
+input_folder = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel"
+output_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/13output.xls"
 
 output_workbook = Workbook()
 output_worksheet = output_workbook.add_sheet('all_data_all_workbooks')
 
 data = []
 first_worksheet = True
-for input_file in glob.glob(os.path.join(input_folder, '*.xls*')):
-	print os.path.basename(input_file)
+for input_file in glob.glob(os.path.join(input_folder, '*sales*')):
+	print(os.path.basename(input_file))
 	with open_workbook(input_file) as workbook:
 		for worksheet in workbook.sheets():
 			if first_worksheet:

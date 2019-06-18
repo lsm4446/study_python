@@ -4,13 +4,13 @@ import sqlite3
 import sys
 
 # Path to and name of a CSV input file
-input_file = sys.argv[1]
+input_file = "D:\Kwonhee\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\database\data_for_updating.csv"
 
 # Create an in-memory SQLite3 database
 # Create a table called sales with four attributes
 con = sqlite3.connect(':memory:')
 query = """CREATE TABLE IF NOT EXISTS sales
-			(customer VARCHAR(20), 
+			(customer VARCHAR(20),
 				product VARCHAR(40),
 				amount FLOAT,
 				date DATE);"""
@@ -27,7 +27,7 @@ for tuple in data:
 statement = "INSERT INTO sales VALUES(?, ?, ?, ?)"
 con.executemany(statement, data)
 con.commit()
-	
+
 # Read the CSV file and update the specific rows
 file_reader = csv.reader(open(input_file, 'r'), delimiter=',')
 header = next(file_reader, None)

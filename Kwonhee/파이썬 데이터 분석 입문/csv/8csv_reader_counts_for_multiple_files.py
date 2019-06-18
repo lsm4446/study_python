@@ -4,7 +4,7 @@ import glob
 import os
 import sys
 
-input_path = sys.argv[1]
+input_path = "D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\csv"
 
 file_counter = 0
 for input_file in glob.glob(os.path.join(input_path,'sales_*')):

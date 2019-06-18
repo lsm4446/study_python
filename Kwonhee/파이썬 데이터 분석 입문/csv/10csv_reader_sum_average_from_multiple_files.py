@@ -5,8 +5,8 @@ import os
 import string
 import sys
 
-input_path = sys.argv[1]
-output_file = sys.argv[2]
+input_path = "D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\csv"
+output_file = "D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\csv\output_10.csv"
 
 output_header_list = ['file_name', 'total_sales', 'average_sales']
 

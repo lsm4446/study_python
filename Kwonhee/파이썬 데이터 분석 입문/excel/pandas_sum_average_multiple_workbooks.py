@@ -4,10 +4,10 @@ import glob
 import os
 import sys
 
-input_path = sys.argv[1]
-output_file = sys.argv[2]
+input_path = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel"
+output_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/pandas_output.xls"
 
-all_workbooks = glob.glob(os.path.join(input_path,'*.xls*'))
+all_workbooks = glob.glob(os.path.join(input_path,'*.xlsx*'))
 data_frames = []
 for workbook in all_workbooks:
 	all_worksheets = pd.read_excel(workbook, sheetname=None, index_col=None)
@@ -17,25 +17,30 @@ for workbook in all_workbooks:
 	worksheets_data_frame = None
 	workbook_data_frame = None
 	for worksheet_name, data in all_worksheets.items():
-		total_sales = pd.DataFrame([float(str(value).strip('$').replace(',','')) for value in data.ix[:, 'Sale Amount']]).sum()
+		total_sales = pd.DataFrame([float(str(value).strip('$').replace(',','')) for value in data.loc[:, 'Sale Amount']]).sum()
+		print('total:', total_sales)
 		number_of_sales = len(data.loc[:, 'Sale Amount'])
-		average_sales = pd.DataFrame(total_sales / number_of_sales)
-		
+		print('amount:', number_of_sales)
+		average_sales = total_sales / number_of_sales
+		# average_sales = pd.DataFrame(total_sales / number_of_sales)은 원래 DataFrame 형태인 total_sales를 다시 DataFrame 형태에 속하게 만들어서 오류가 난다.
+		print('average:', average_sales)
+
 		workbook_total_sales.append(total_sales)
 		workbook_number_of_sales.append(number_of_sales)
-		
+
 		data = {'workbook': os.path.basename(workbook),
 				'worksheet': worksheet_name,
 				'worksheet_total': total_sales,
 				'worksheet_average': average_sales}
-		
+
+		print(data)
 		worksheet_data_frames.append(pd.DataFrame(data, columns=['workbook', 'worksheet', 'worksheet_total', 'worksheet_average']))
 	worksheets_data_frame = pd.concat(worksheet_data_frames, axis=0, ignore_index=True)
 
 	workbook_total = pd.DataFrame(workbook_total_sales).sum()
 	workbook_total_number_of_sales = pd.DataFrame(workbook_number_of_sales).sum()
-	workbook_average = pd.DataFrame(workbook_total / workbook_total_number_of_sales)
-	
+	workbook_average = workbook_total / workbook_total_number_of_sales
+
 	workbook_stats = {'workbook': os.path.basename(workbook),
 					 'workbook_total': workbook_total,
 					 'workbook_average': workbook_average}

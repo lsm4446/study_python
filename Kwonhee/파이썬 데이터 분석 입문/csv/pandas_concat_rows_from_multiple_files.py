@@ -4,8 +4,8 @@ import glob
 import os
 import sys
 
-input_path = sys.argv[1]
-output_file = sys.argv[2]
+input_path = r"D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\csv"
+output_file = r"D:\OneDrive\Github\study_python\Kwonhee\파이썬 데이터 분석 입문\csv\pandas_output.csv"
 
 all_files = glob.glob(os.path.join(input_path,'sales_*'))
 

@@ -2,8 +2,8 @@
 import pandas as pd
 import sys
 
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+input_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/sales_2013.xlsx"
+output_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/pandas_output.xls"
 
 data_frame = pd.read_excel(input_file, 'january_2013', index_col=None)
 data_frame_value_meets_condition = \

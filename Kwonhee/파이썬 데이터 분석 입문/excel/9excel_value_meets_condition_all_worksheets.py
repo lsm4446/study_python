@@ -4,8 +4,8 @@ from datetime import date
 from xlrd import open_workbook, xldate_as_tuple
 from xlwt import Workbook
 
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+input_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/sales_2013.xlsx"
+output_file = "D:/kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/excel/9output.xls"
 
 output_workbook = Workbook()
 output_worksheet = output_workbook.add_sheet('filtered_rows_all_worksheets')
