@@ -22,5 +22,5 @@ plt.xlabel('Draw')
 plt.ylabel('Random Number')
 plt.legend(loc='best')
 
-plt.savefig('line_plot.png', dpi=400, bbox_inches='tight')
+plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/line_plot.png', dpi=400, bbox_inches='tight')
 plt.show()

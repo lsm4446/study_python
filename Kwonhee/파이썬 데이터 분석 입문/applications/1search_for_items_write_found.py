@@ -6,9 +6,9 @@ import sys
 from datetime import date
 from xlrd import open_workbook, xldate_as_tuple
 
-item_numbers_file = sys.argv[1]
-path_to_folder = sys.argv[2]
-output_file = sys.argv[3]
+item_numbers_file = "D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/applications/item_numbers_to_find.csv"
+path_to_folder = "D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/applications/historical_files"
+output_file = "D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/applications/output_files/1output.csv"
 
 item_numbers_to_find = []
 with open(item_numbers_file, 'r', newline='') as item_numbers_csv_file:
@@ -17,7 +17,7 @@ with open(item_numbers_file, 'r', newline='') as item_numbers_csv_file:
 		item_numbers_to_find.append(row[0])
 print(item_numbers_to_find)
 
-filewriter = csv.writer(open(output_file, 'a', newline=''))
+filewriter = csv.writer(open(output_file, 'w', newline=''))
 
 file_counter = 0
 line_counter = 0

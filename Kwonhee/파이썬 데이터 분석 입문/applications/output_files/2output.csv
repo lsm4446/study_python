@@ -1,16 +1,16 @@
 Customer Name,Category,Total Time (in Days)
-Wayne Thompson,Silver,157
+John Smith,Bronze,70
+John Smith,Silver,39
+John Smith,Gold,1864
+Mary Yu,Silver,72
+Mary Yu,Gold,1889
 Wayne Thompson,Bronze,167
-Bruce Johnson,Gold,160
-Bruce Johnson,Silver,60
+Wayne Thompson,Silver,1815
 Bruce Johnson,Bronze,77
-Annie Lee,Gold,192
-Annie Lee,Silver,44
+Bruce Johnson,Silver,60
+Bruce Johnson,Gold,1818
 Annie Lee,Bronze,26
+Annie Lee,Silver,44
+Annie Lee,Gold,1850
 Priya Patel,Silver,99
 Priya Patel,Gold,54
-Mary Yu,Silver,72
-Mary Yu,Gold,231
-John Smith,Gold,206
-John Smith,Silver,39
-John Smith,Bronze,70

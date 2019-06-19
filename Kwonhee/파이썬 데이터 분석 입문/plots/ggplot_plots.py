@@ -29,4 +29,4 @@ plt3 = ggplot(diamonds, aes(x='carat', y='price', colour='cut')) +\
 		theme_gray()
 print(plt3)
 
-ggsave(plt3, "ggplot_plots.png")
+ggsave(plt3, "Kwonhee/파이썬 데이터 분석 입문/plots/ggplot_plots.png")

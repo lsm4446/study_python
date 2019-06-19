@@ -23,5 +23,5 @@ ax1.set_title('Box Plots: Resampling of Two Distributions')
 ax1.set_xlabel('Distribution')
 ax1.set_ylabel('Value')
 
-plt.savefig('box_plot.png', dpi=400, bbox_inches='tight')
+plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/box_plot.png', dpi=400, bbox_inches='tight')
 plt.show()

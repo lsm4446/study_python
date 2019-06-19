@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
 x = np.arange(start=1., stop=15., step=1.)
-y_linear = x + 5. * np.random.randn(14.)
-y_quadratic = x**2 + 10. * np.random.randn(14.)
+print(x)
+y_linear = x + 5. * np.random.randn(14)
+y_quadratic = x**2 + 10. * np.random.randn(14)
 
 fn_linear = np.poly1d(np.polyfit(x, y_linear, deg=1))
 fn_quadratic = np.poly1d(np.polyfit(x, y_quadratic, deg=2))
@@ -23,5 +24,5 @@ plt.ylabel('f(x)')
 plt.xlim((min(x)-1., max(x)+1.))
 plt.ylim((min(y_quadratic)-10., max(y_quadratic)+10.))
 
-plt.savefig('scatter_plot.png', dpi=400, bbox_inches='tight')
+plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/scatter_plot.png', dpi=400, bbox_inches='tight')
 plt.show()

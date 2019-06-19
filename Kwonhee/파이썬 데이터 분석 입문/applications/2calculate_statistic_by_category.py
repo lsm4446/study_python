@@ -12,9 +12,9 @@ def date_diff(date1, date2):
 	if diff == '0:00:00':
 		diff = 0
 	return diff
-	
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+
+input_file = "D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/applications/customer_category_history.csv"
+output_file = "D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/applications/output_files/2output.csv"
 
 packages = {}
 previous_name = 'N/A'
@@ -32,8 +32,11 @@ with open(input_file, 'r', newline='') as input_csv_file:
 		current_package_date = row[3]
 		if current_name not in packages:
 			packages[current_name] = {}
+			# current_name을 딕셔너리에 키로 저장, 값은 {} 빈 값으로 저장
 		if current_package not in packages[current_name]:
 			packages[current_name][current_package] = 0
+			# packages 딕셔너리 내부 current_name의 딕셔너리에 current_package를 키로 저장, 값은 0
+			# {'John Smith':{'Bronze':0}}
 		if current_name != previous_name:
 			if first_row:
 				first_row = False
@@ -54,11 +57,11 @@ header = ['Customer Name', 'Category', 'Total Time (in Days)']
 with open(output_file, 'w', newline='') as output_csv_file:
 	filewriter = csv.writer(output_csv_file)
 	filewriter.writerow(header)
-for customer_name, customer_name_value in packages.items():
-	for package_category, package_category_value in packages[customer_name].items():
-		row_of_output = []
-		print(customer_name, package_category, package_category_value)
-		row_of_output.append(customer_name)
-		row_of_output.append(package_category)
-		row_of_output.append(package_category_value)
-		filewriter.writerow(row_of_output)
+	for customer_name, customer_name_value in packages.items():
+		for package_category, package_category_value in packages[customer_name].items():
+			row_of_output = []
+			print(customer_name, package_category, package_category_value)
+			row_of_output.append(customer_name)
+			row_of_output.append(package_category)
+			row_of_output.append(package_category_value)
+			filewriter.writerow(row_of_output)

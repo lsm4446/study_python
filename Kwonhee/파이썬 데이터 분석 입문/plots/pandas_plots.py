@@ -10,8 +10,13 @@ ax1, ax2 = axes.ravel()
 data_frame = pd.DataFrame(np.random.rand(5, 3),
 						index=['Customer 1', 'Customer 2', 'Customer 3', 'Customer 4', 'Customer 5'],
 						columns=pd.Index(['Metric 1', 'Metric 2', 'Metric 3'], name='Metrics'))
+print(data_frame)
+print(ax1)
+print(ax2)
+print(fig)
+print(axes)
 
-data_frame.plot(kind='bar', ax=ax1, alpha=0.75, title='Bar Plot')
+data_frame.plot(kind='bar', ax=ax1, alpha=0.75, title='Bar Plot') # kind에 따라서 자동으로 데이터 유형이 정해진다. Customer를 쓸건지, Metric을 쓸건지(행과 열)
 plt.setp(ax1.get_xticklabels(), rotation=45, fontsize=10)
 plt.setp(ax1.get_yticklabels(), rotation=0, fontsize=10)
 ax1.set_xlabel('Customer')
@@ -28,5 +33,5 @@ ax2.set_ylabel('Value')
 ax2.xaxis.set_ticks_position('bottom')
 ax2.yaxis.set_ticks_position('left')
 
-plt.savefig('pandas_plots.png', dpi=400, bbox_inches='tight')
+plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/pandas_plots.png', dpi=400, bbox_inches='tight')
 plt.show()

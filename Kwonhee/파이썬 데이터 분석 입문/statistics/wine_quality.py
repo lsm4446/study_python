@@ -7,11 +7,11 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from statsmodels.formula.api import ols, glm
 
-
 # Read the data set into a pandas DataFrame
-wine = pd.read_csv('winequality-both.csv', sep=',', header=0)
+wine = pd.read_csv('D:/Kwonhee/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/statistics/winequality-both.csv', sep=',', header=0)
 wine.columns = wine.columns.str.replace(' ', '_')
 print(wine.head())
+
 
 # Display descriptive statistics for all variables
 print(wine.describe())
@@ -23,7 +23,7 @@ print(sorted(wine.quality.unique()))
 print(wine.quality.value_counts())
 
 # Display descriptive statistics for quality by wine type
-print(wine.groupby('type')[['alcohol']].describe().unstack('type'))
+print(wine.groupby('type')[['alcohol']].describe().unstack('type')) # unstack을 이용하여 세로를 가로로
 
 # Calculate specific quantiles
 print(wine.groupby('type')[['quality']].quantile([0.25, 0.75]).unstack('type'))
@@ -34,7 +34,7 @@ print(wine.corr())
 # Look at relationship between pairs of variables
 # Take a "small" sample of red and white wines for plotting
 def take_sample(data_frame, replace=False, n=200):
-	return data_frame.loc[np.random.choice(data_frame.index, replace=replace, size=n)]	
+	return data_frame.loc[np.random.choice(data_frame.index, replace=replace, size=n)]
 reds = wine.loc[wine['type']=='red', :]
 whites = wine.loc[wine['type']=='white', :]
 reds_sample = take_sample(wine.loc[wine['type']=='red', :])
@@ -74,7 +74,7 @@ print(g)
 plt.suptitle('Histograms and Scatter Plots of Quality, Alcohol, and Residual Sugar', fontsize=14, \
 		horizontalalignment='center', verticalalignment='top',
 		x=0.5, y=0.999)
-#plt.show()
+plt.show()
 
 # Look at the distribution of quality by wine type
 red_wine = wine.ix[wine['type']=='red', 'quality']
@@ -85,10 +85,11 @@ print(sns.distplot(red_wine, \
 		norm_hist=True, kde=False, color="red", label="Red wine"))
 print(sns.distplot(white_wine, \
 		norm_hist=True, kde=False, color="white", label="White wine"))
-sns.axlabel("Quality Score", "Density")
+plt.xlabel("Quality Score")
+plt.ylabel("Density")
 plt.title("Distribution of Quality by Wine Type")
 plt.legend()
-#plt.show()
+plt.show()
 
 # Test whether mean quality is different between red and white wines
 print(wine.groupby(['type'])[['quality']].agg(['std', 'mean']))
@@ -125,3 +126,4 @@ new_observations = wine.ix[wine.index.isin(xrange(10)), independent_variables.co
 y_predicted = lm.predict(new_observations)
 y_predicted_rounded = [round(score, 2) for score in y_predicted]
 print(y_predicted_rounded)
+"""

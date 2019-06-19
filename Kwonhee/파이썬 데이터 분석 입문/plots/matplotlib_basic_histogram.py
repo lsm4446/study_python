@@ -9,8 +9,8 @@ x2 = mu2 + sigma*np.random.randn(10000)
 
 fig = plt.figure()
 ax1 = fig.add_subplot(1,1,1)
-n, bins, patches = ax1.hist(x1, bins=50, normed=False, color='darkgreen')
-n, bins, patches = ax1.hist(x2, bins=50, normed=False, color='orange', alpha=0.5)
+n, bins, patches = ax1.hist(x1, bins=50, density=False, color='darkgreen')
+n, bins, patches = ax1.hist(x2, bins=50, density=False, color='orange', alpha=0.5)
 ax1.xaxis.set_ticks_position('bottom')
 ax1.yaxis.set_ticks_position('left')
 
@@ -19,5 +19,5 @@ plt.ylabel('Number of Values in Bin')
 fig.suptitle('Histograms', fontsize=14, fontweight='bold')
 ax1.set_title('Two Frequency Distributions')
 
-plt.savefig('histogram.png', dpi=400, bbox_inches='tight')
+plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/histogram.png', dpi=400, bbox_inches='tight')
 plt.show()
