@@ -1,16 +1,3 @@
-Customer Name,Category,Total Time (in Days)
-John Smith,Bronze,70
-John Smith,Silver,39
-John Smith,Gold,1864
-Mary Yu,Silver,72
-Mary Yu,Gold,1889
-Wayne Thompson,Bronze,167
-Wayne Thompson,Silver,1815
-Bruce Johnson,Bronze,77
-Bruce Johnson,Silver,60
-Bruce Johnson,Gold,1818
-Annie Lee,Bronze,26
-Annie Lee,Silver,44
-Annie Lee,Gold,1850
-Priya Patel,Silver,99
-Priya Patel,Gold,54
+version https://git-lfs.github.com/spec/v1
+oid sha256:c076f5ffc37c9c1497b2d962079eb26cf0c2c2ded87dad7b3a94388d4bda3b45
+size 386
