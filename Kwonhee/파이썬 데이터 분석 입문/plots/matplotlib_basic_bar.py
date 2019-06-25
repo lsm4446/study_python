@@ -18,5 +18,5 @@ plt.xlabel('Customer Name')
 plt.ylabel('Sale Amount')
 plt.title('Sale Amount per Customer')
 
-plt.savefig('Kwonhee/파이썬 데이터 분석 입문/plots/bar_plot.png', dpi=400, bbox_inches='tight')
+plt.savefig('D:/OneDrive/Github/study_python/Kwonhee/파이썬 데이터 분석 입문/plots/bar_plot.png', dpi=400, bbox_inches='tight')
 plt.show()
